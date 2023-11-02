@@ -3,25 +3,26 @@ import React from 'react'
 import AuthStack from './AuthStack'
 import UserStack from './UserStack'
 import { NavigationContainer } from '@react-navigation/native'
-import app from "../../firebaseConfig"
 import { useSelector } from 'react-redux'
+import app from '../../firebaseConfig';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigation = () => {
 
- const {isAuth} = useSelector((state)=> state.user)
+  const { isAuth } = useSelector((state)=> state.user)
+
+   
 
   return (
-    
     <NavigationContainer>
-
         {
-            !isAuth ? <AuthStack/> : <UserStack/>
+            !isAuth 
+
+            ? <AuthStack/> 
+            :  <UserStack/>
         }
-
-
     </NavigationContainer>
   )
 }
