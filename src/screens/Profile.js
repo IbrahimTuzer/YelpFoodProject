@@ -13,7 +13,6 @@ const Profile = () => {
   }
 
 
-
   return (
     <View style={styles.container}>
       <Text>Profile</Text>

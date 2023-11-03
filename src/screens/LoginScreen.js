@@ -4,7 +4,9 @@ import React from 'react'
 import { LoginButton } from '../components'
 import { Entypo } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../redux/userSlice';
+import { login, autoLogin} from '../redux/userSlice';
+import {Loading} from "../components/"
+
 
 const LoginScreen = ({navigation}) => {
 
@@ -14,10 +16,12 @@ const LoginScreen = ({navigation}) => {
 //.....................................................................
 
   const dispatch = useDispatch();
-  const {errorMessage} = useSelector((state)=> state.user)
+  const {errorMessage, isLoading} = useSelector((state)=> state.user)
 
 //.....................................................................
-
+useEffect(() => {
+  dispatch(autoLogin())
+}, [])
 
 useEffect(() => {
   const invalidEmail = 'Firebase: Error (auth/invalid-email)'
@@ -39,6 +43,9 @@ const handleOnPress=()=>{
 
 //.....................................................................
 
+if(isLoading){
+  return <Loading/>
+}
 
   return (
     <View style={styles.mainContainer}>
