@@ -58,17 +58,20 @@ if(isLoading){
           <TextInput style={styles.registerInputContainer}
              placeholder='Enter Your Email'
              onChangeText={(text)=> setEmail(text.toLocaleLowerCase())}
-             value={email}/>
+             value={email}
+             />
 
           <TextInput style={styles.registerInputContainer}
              placeholder='Enter Your Password'
              onChangeText={setPassword}
-             value={password}/>
+             value={password}
+             secureTextEntry/>
 
           <TextInput style={styles.registerInputContainer}
              placeholder='Re-Enter Your Password'
              onChangeText={setConfirmPassword}
-             value={confirmPassword}/>
+             value={confirmPassword}
+             secureTextEntry/>
         </View>
 
         <View style={styles.errorContainer}>
