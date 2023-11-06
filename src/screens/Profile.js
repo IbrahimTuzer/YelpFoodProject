@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../redux/userSlice'
+import { AntDesign } from '@expo/vector-icons';
 
 const Profile = () => {
 
@@ -12,10 +13,14 @@ const Profile = () => {
 
   }
 
+   
+   
 
   return (
     <View style={styles.container}>
-      <Text>Profile</Text>
+      <AntDesign name="user" size={90} color="black" />
+      <Text style={styles.profileText}>Profile</Text>
+      <Text></Text>
       <Pressable style={({pressed})=> [{backgroundColor: pressed ? "gray" : "white"}, styles.logOutButton]}
                   onPress={handleLogOut}>
         <Text style={styles.textLogOut}>Log Out</Text>
@@ -32,6 +37,10 @@ const styles = StyleSheet.create({
     alignItems:"center",
     justifyContent:"center",
     backgroundColor:"#fff",
+  },
+  profileText:{
+    fontSize: 30,
+    fontWeight: "bold",
   },
   textLogOut:{
     fontSize: 16,

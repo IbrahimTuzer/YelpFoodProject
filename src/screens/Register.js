@@ -78,7 +78,8 @@ if(isLoading){
        <LoginButton
           name="Sign Up"
           handleButtonData={handleOnPress}
-          disable={isButtonDisable}/>
+          disable={isButtonDisable}
+          />
       </View>
 
       <Pressable style={styles.loginBack}

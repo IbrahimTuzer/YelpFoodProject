@@ -8,10 +8,13 @@ const initialState ={
     isDataFetched:false,
 }
 
+//..............................................................................
+
 export const fetchDataAsync = createAsyncThunk('data/fetchData', async() => {
     const response = await fetchData();
     return response;
 })
+//..............................................................................
 
 const dataSlice = createSlice({
     name:'data',

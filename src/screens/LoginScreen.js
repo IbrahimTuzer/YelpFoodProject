@@ -13,12 +13,12 @@ const LoginScreen = ({navigation}) => {
   const [email, setEmail]= useState("")
   const [password, setPassword]= useState("")
   const [handleErrorMessage, setHandleErrorMessage]= useState("")
-//.....................................................................
+
 
   const dispatch = useDispatch();
   const {errorMessage, isLoading} = useSelector((state)=> state.user)
 
-//.....................................................................
+
 useEffect(() => {
   dispatch(autoLogin())
 }, [])
@@ -35,13 +35,13 @@ useEffect(() => {
 
 }, [errorMessage])
 
-//.....................................................................
+
 
 const handleOnPress=()=>{
   dispatch(login({email, password}))
 }
 
-//.....................................................................
+
 
 if(isLoading){
   return <Loading/>
@@ -63,7 +63,9 @@ if(isLoading){
           <TextInput style={styles.password}
           placeholder='Password'
           onChangeText={setPassword}
-          value={password}/>
+          value={password}
+          secureTextEntry/>
+          
         </View>
 
         <View style={styles.errorMessageContainer}>
